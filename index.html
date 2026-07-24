@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Peak 1 Consulting | Fractional Sales Leadership for B2B Tech</title>
+<meta name="description" content="Peak 1 Consulting: fractional sales and fractional sales leadership for B2B tech companies. Eric Gehnrich brings ownership, accountability, and a nationwide network to your revenue engine.">
+<link rel="icon" type="image/png" href="logo.png">
+<style>
+  :root {
+    --navy: #021a40;
+    --navy-2: #0a2d5e;
+    --slate: #46586e;
+    --ink: #16233a;
+    --paper: #f6f9fc;
+    --white: #ffffff;
+    --accent: #c90e21;
+    --accent-dark: #a30b1a;
+    --blue: #2298d3;
+    --line: #dde5ec;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    color: var(--ink);
+    background: var(--white);
+    line-height: 1.6;
+  }
+  h1, h2, h3 { font-weight: 700; line-height: 1.15; color: var(--navy); }
+  section { padding: 88px 24px; }
+  .wrap { max-width: 1080px; margin: 0 auto; }
+  .kicker {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+  }
+  .section-title { font-size: clamp(28px, 4vw, 38px); margin-bottom: 18px; }
+  .section-lead { font-size: 18px; color: var(--slate); max-width: 720px; }
+
+  /* ---------- Nav ---------- */
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    max-width: 1080px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 10px 24px;
+  }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .brand img { height: 48px; width: auto; display: block; }
+  .nav-links { display: flex; align-items: center; gap: 28px; }
+  .nav-links a {
+    color: var(--navy); text-decoration: none; font-size: 15px; font-weight: 600;
+  }
+  .nav-links a:hover { color: var(--accent); }
+  .btn {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--white) !important;
+    font-weight: 700;
+    padding: 12px 26px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.15s ease;
+  }
+  .btn:hover { background: var(--accent-dark); }
+  .btn-ghost {
+    background: transparent;
+    border: 2px solid rgba(255,255,255,0.35);
+  }
+  .btn-ghost:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.6); }
+  @media (max-width: 760px) { .nav-links a:not(.btn) { display: none; } }
+
+  /* ---------- Hero ---------- */
+  header.hero {
+    background:
+      linear-gradient(180deg, rgba(2,26,64,0.95) 0%, rgba(10,45,94,0.95) 100%),
+      var(--navy);
+    position: relative;
+    overflow: hidden;
+    color: var(--white);
+    padding: 110px 24px 130px;
+  }
+  header.hero::after {
+    content: "";
+    position: absolute; left: 0; right: 0; bottom: -2px;
+    height: 180px;
+    background:
+      linear-gradient(115deg, transparent 0 38%, rgba(255,255,255,0.05) 38% 55%, transparent 55%),
+      linear-gradient(245deg, transparent 0 40%, rgba(255,255,255,0.04) 40% 60%, transparent 60%);
+    pointer-events: none;
+  }
+  .hero-inner { max-width: 1080px; margin: 0 auto; position: relative; z-index: 1; }
+  .hero h1 {
+    color: var(--white);
+    font-size: clamp(34px, 5.4vw, 56px);
+    max-width: 780px;
+    margin-bottom: 22px;
+  }
+  .hero h1 em { font-style: normal; color: var(--blue); }
+  .hero .kicker { color: var(--blue); }
+  .hero p.sub {
+    font-size: 20px;
+    color: #c9d6e2;
+    max-width: 640px;
+    margin-bottom: 36px;
+  }
+  .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
+
+  /* ---------- Stats band ---------- */
+  .stats {
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+    padding: 34px 24px;
+  }
+  .stats-inner {
+    max-width: 1080px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    text-align: center;
+  }
+  .stat b { display: block; font-size: 17px; color: var(--navy); margin-bottom: 4px; }
+  .stat span { font-size: 14.5px; color: var(--slate); }
+  @media (max-width: 700px) { .stats-inner { grid-template-columns: 1fr; gap: 18px; } }
+
+  /* ---------- About ---------- */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 56px;
+    align-items: start;
+  }
+  @media (max-width: 860px) { .about-grid { grid-template-columns: 1fr; } }
+  .portrait {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 10px;
+    overflow: hidden;
+    background: linear-gradient(160deg, var(--navy-2), var(--navy));
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+    box-shadow: 0 18px 40px -18px rgba(14,31,51,0.45);
+  }
+  .portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .portrait .placeholder {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 10px; color: #8fa3b8; font-size: 14px; text-align: center; padding: 20px;
+  }
+  .about p { color: var(--slate); font-size: 17px; margin-bottom: 16px; }
+  .about p strong { color: var(--navy); }
+
+  /* ---------- Services ---------- */
+  .services { background: var(--paper); }
+  .roles {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+    margin: 40px 0 48px;
+  }
+  @media (max-width: 760px) { .roles { grid-template-columns: 1fr; } }
+  .role-card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-top: 4px solid var(--accent);
+    border-radius: 10px;
+    padding: 32px;
+  }
+  .role-card h3 { font-size: 22px; margin-bottom: 10px; }
+  .role-card p { color: var(--slate); font-size: 16px; }
+  .cap-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+  }
+  @media (max-width: 900px) { .cap-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 620px) { .cap-grid { grid-template-columns: 1fr; } }
+  .cap {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 24px;
+  }
+  .cap .icon {
+    width: 42px; height: 42px; border-radius: 8px;
+    background: rgba(34,152,211,0.12);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 14px;
+    color: var(--blue);
+  }
+  .cap h4 { font-size: 16.5px; color: var(--navy); margin-bottom: 6px; }
+  .cap p { font-size: 14.5px; color: var(--slate); }
+
+  /* ---------- Difference ---------- */
+  .difference { background: var(--navy); color: var(--white); }
+  .difference .kicker { color: var(--blue); }
+  .difference .section-title { color: var(--white); }
+  .difference .section-lead { color: #c9d6e2; }
+  .diff-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 44px;
+  }
+  @media (max-width: 760px) { .diff-grid { grid-template-columns: 1fr; } }
+  .diff-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 10px;
+    padding: 30px;
+  }
+  .diff-card .num {
+    font-size: 14px; font-weight: 700; letter-spacing: 0.12em;
+    color: var(--blue); margin-bottom: 12px;
+  }
+  .diff-card h3 { color: var(--white); font-size: 20px; margin-bottom: 10px; }
+  .diff-card p { color: #c9d6e2; font-size: 15.5px; }
+  .equation {
+    margin-top: 44px;
+    background: rgba(34,152,211,0.12);
+    border: 1px solid rgba(34,152,211,0.4);
+    border-radius: 10px;
+    padding: 28px 32px;
+    font-size: 18px;
+    color: #bfe0f2;
+    text-align: center;
+  }
+  .equation strong { color: var(--white); }
+
+  /* ---------- How it works ---------- */
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 44px; }
+  @media (max-width: 900px) { .steps { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .steps { grid-template-columns: 1fr; } }
+  .step {
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 26px 22px;
+    position: relative;
+  }
+  .step .badge {
+    width: 34px; height: 34px; border-radius: 50%;
+    background: var(--navy); color: var(--white);
+    font-weight: 700; font-size: 15px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 14px;
+  }
+  .step h4 { font-size: 16.5px; margin-bottom: 6px; }
+  .step p { font-size: 14.5px; color: var(--slate); }
+
+  /* ---------- Contact ---------- */
+  .contact {
+    background:
+      linear-gradient(180deg, rgba(10,45,94,0.95), rgba(2,26,64,0.97)),
+      var(--navy);
+    color: var(--white);
+    text-align: center;
+  }
+  .contact .kicker { color: var(--blue); }
+  .contact .section-title { color: var(--white); }
+  .contact p { color: #c9d6e2; font-size: 18px; max-width: 620px; margin: 0 auto 34px; }
+  .contact .btn { font-size: 17px; padding: 15px 36px; }
+  .contact-alt { margin-top: 22px; font-size: 15px; }
+  .contact-alt a { color: var(--blue); text-decoration: none; font-weight: 600; }
+
+  footer {
+    background: #010f26;
+    color: #7e93a8;
+    font-size: 14px;
+    padding: 26px 24px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="brand" href="#top">
+      <img src="logo.png" alt="Peak 1 Consulting">
+    </a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#difference">The Difference</a>
+      <a href="#how">How It Works</a>
+      <a class="btn" href="#contact">Let's Talk</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-inner">
+    <span class="kicker">Fractional Sales &middot; Fractional Sales Leadership</span>
+    <h1>Senior sales firepower for B2B tech, <em>with skin in the game.</em></h1>
+    <p class="sub">Peak 1 Consulting puts a proven sales leader inside your business, one who owns the pipeline and the number the way your own people do.</p>
+    <div class="hero-ctas">
+      <a class="btn" href="#contact">Book an Intro Call</a>
+      <a class="btn btn-ghost" href="#services">Explore Services</a>
+    </div>
+  </div>
+</header>
+
+<div class="stats">
+  <div class="stats-inner">
+    <div class="stat"><b>B2B Tech Focus</b><span>Tech and tech-enabled solutions across corporate sales motions</span></div>
+    <div class="stat"><b>Nationwide Network</b><span>Well-established relationships throughout the United States</span></div>
+    <div class="stat"><b>Hands-On Execution</b><span>Eric sells and generates leads himself, alongside the coaching</span></div>
+  </div>
+</div>
+
+<section id="about" class="about">
+  <div class="wrap about-grid">
+    <div class="portrait">
+      <img src="eric.jpeg" alt="Eric Gehnrich, Founder of Peak 1 Consulting" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="placeholder" style="display:none;">
+        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#8fa3b8" stroke-width="1.5">
+          <circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/>
+        </svg>
+        Photo of Eric Gehnrich<br>(add images/eric.jpg)
+      </div>
+    </div>
+    <div>
+      <span class="kicker">Meet Eric Gehnrich</span>
+      <h2 class="section-title">A career spent winning B2B deals and building the teams that win them.</h2>
+      <p>Eric Gehnrich is a fractional salesperson and fractional sales leader. He has spent his career in B2B sales for tech and tech-enabled solutions, across just about every corporate sales motion there is, including non-endemic partnerships within B2B2C channels.</p>
+      <p>He has led partnership sales and large deal responses, built and mentored sales territories, and designed the incentive plans that paid for them. He also still sells: his network reaches across the United States, and he uses it to generate real leads himself.</p>
+      <p>What sets him apart is the combination. Eric keeps unusually organized notes, processes, and internal systems, and he pairs that discipline with genuine personal outreach that connects the right parties at the right time.</p>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="services">
+  <div class="wrap">
+    <span class="kicker">Services</span>
+    <h2 class="section-title">Two ways to engage. One standard of ownership.</h2>
+    <p class="section-lead">Whether you need a senior seller carrying a number or a leader building your revenue engine, Peak 1 plugs in at the level your business needs, without the cost or risk of a full-time executive hire.</p>
+
+    <div class="roles">
+      <div class="role-card">
+        <h3>Fractional Salesperson</h3>
+        <p>Eric joins your team as a working senior seller. He prospects through his own network, generates qualified leads, and runs deals through to close. The pipeline he builds is one he personally carries.</p>
+      </div>
+      <div class="role-card">
+        <h3>Fractional Sales Leader</h3>
+        <p>Eric steps in as a part-time head of sales. He builds territories, mentors reps, designs incentive plans, and installs the processes that make a sales organization repeatable.</p>
+      </div>
+    </div>
+
+    <div class="cap-grid">
+      <div class="cap">
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 12h8M12 8v8"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <h4>Partnership Sales</h4>
+        <p>Channel and alliance relationships that multiply your reach, including non-endemic partnerships in B2B2C channels.</p>
+      </div>
+      <div class="cap">
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></div>
+        <h4>Large Deal Responses</h4>
+        <p>Complex RFPs and enterprise pursuits, led from strategy through submission.</p>
+      </div>
+      <div class="cap">
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg></div>
+        <h4>Territory Creation &amp; Mentoring</h4>
+        <p>Territories designed from scratch, plus coaching for the people who run them.</p>
+      </div>
+      <div class="cap">
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <h4>Incentive Plan Design</h4>
+        <p>Compensation plans that drive the behavior your strategy needs.</p>
+      </div>
+      <div class="cap">
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h4>Network-Driven Lead Generation</h4>
+        <p>Personal, genuine outreach through established relationships across the United States.</p>
+      </div>
+      <div class="cap">
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+        <h4>Direct Sales Execution</h4>
+        <p>Full sales cycles, run personally, across a range of corporate sales motions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="difference" class="difference">
+  <div class="wrap">
+    <span class="kicker">The Peak 1 Difference</span>
+    <h2 class="section-title">Most consultants advise. Eric owns.</h2>
+    <p class="section-lead">Typical sales consulting stops at process mentoring. Peak 1 combines organized systems with a working network and takes real accountability for results.</p>
+
+    <div class="diff-grid">
+      <div class="diff-card">
+        <div class="num">01 &middot; THE SYSTEM</div>
+        <h3>Organized to a fault</h3>
+        <p>Eric runs every engagement on documented, repeatable operating discipline: organized notes, processes, and internal systems. Nothing lives in someone's head or slips through the cracks.</p>
+      </div>
+      <div class="diff-card">
+        <div class="num">02 &middot; THE NETWORK</div>
+        <h3>Relationships that open doors</h3>
+        <p>A network built over a career and worked through personal, genuine outreach. Eric introduces the right parties to each other because he actually knows them.</p>
+      </div>
+      <div class="diff-card">
+        <div class="num">03 &middot; THE OWNERSHIP</div>
+        <h3>Accountability beyond advice</h3>
+        <p>Eric doesn't hand you a playbook and walk away. He takes ownership of the pipeline and the outcome, and he works inside your business as if it were his own.</p>
+      </div>
+      <div class="diff-card">
+        <div class="num">04 &middot; THE RESULT</div>
+        <h3>A deeper engagement</h3>
+        <p>Skin in the game changes the level of commitment, and it changes how confident you can feel about the outcome.</p>
+      </div>
+    </div>
+
+    <div class="equation">
+      <strong>Systems + Network + Ownership</strong> &nbsp;=&nbsp; a sales partner measured by your results rather than his hours.
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <span class="kicker">How It Works</span>
+    <h2 class="section-title">From first call to closed revenue.</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="badge">1</div>
+        <h4>Discovery</h4>
+        <p>A candid conversation about your product, your market, and where your sales motion is stuck.</p>
+      </div>
+      <div class="step">
+        <div class="badge">2</div>
+        <h4>Engagement Design</h4>
+        <p>Define the right fractional model (seller, leader, or both) with clear goals and scope.</p>
+      </div>
+      <div class="step">
+        <div class="badge">3</div>
+        <h4>Execution</h4>
+        <p>Eric embeds in your business, sets up the systems, works his network, and drives deals.</p>
+      </div>
+      <div class="step">
+        <div class="badge">4</div>
+        <h4>Results &amp; Handoff</h4>
+        <p>Measurable pipeline and revenue, plus processes your team keeps after the engagement ends.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <span class="kicker">Get Started</span>
+    <h2 class="section-title">Ready to put senior sales leadership to work?</h2>
+    <p>Start with a no-obligation conversation about your sales goals. If Peak 1 isn't the right fit, Eric will tell you, and he will probably point you to someone in his network who is.</p>
+    <a class="btn" href="mailto:eric@peak1consulting.com">Email Eric</a>
+    <div class="contact-alt">Or connect on <a href="#" title="Add Eric's LinkedIn URL">LinkedIn</a></div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2026 Peak 1 Consulting &middot; Eric Gehnrich &middot; Fractional Sales &amp; Sales Leadership for B2B Tech
+</footer>
+
+</body>
+</html>
